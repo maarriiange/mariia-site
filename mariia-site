@@ -1,0 +1,306 @@
+:root{
+  --irish-green: #169B62;
+  --irish-orange: #FF883E;
+  --irish-white: #ffffff;
+  --bg: #fbfbfb;
+  --text: #222;
+  --muted: #666;
+  --card-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  --accent: var(--irish-green);
+  --radius: 12px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; background:linear-gradient(180deg, #fff 0%, #fbfbfb 100%); color:var(--text); font-size:16px}
+a{color:inherit; text-decoration:none}
+.container{width:980px; margin:36px auto;}
+
+/* Header */
+.header{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 28px; background:var(--irish-white);
+  border-radius:14px; box-shadow:var(--card-shadow);
+  transition:transform .28s ease, box-shadow .28s ease;
+}
+.header:hover{transform:translateY(-3px); box-shadow:0 14px 34px rgba(0,0,0,0.08)}
+.brand{display:flex; gap:12px; align-items:center}
+.flag{
+  width:44px; height:28px; border-radius:6px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  display:flex; flex-direction:row;
+}
+.flag > div{flex:1}
+.flag .g{background:var(--irish-green)}
+.flag .w{background:var(--irish-white)}
+.flag .o{background:var(--irish-orange)}
+.title{font-weight:700; font-size:18px}
+.nav{display:flex; gap:14px; align-items:center}
+.nav a{padding:8px 14px; border-radius:10px; transition:all .22s ease; color:var(--muted)}
+.nav a.active{background:linear-gradient(90deg,var(--irish-green),var(--irish-orange)); color:var(--irish-white); box-shadow:0 6px 18px rgba(21,111,64,0.12)}
+.nav a:hover{transform:translateY(-2px); color:var(--text)}
+
+/* Hero */
+.hero{margin-top:24px; display:flex; gap:20px; align-items:flex-start}
+.left{
+  flex:1; background:linear-gradient(180deg, rgba(22,155,98,0.06), rgba(255,136,62,0.03));
+  padding:20px; border-radius:12px; box-shadow:var(--card-shadow)
+}
+.right{width:320px; background:var(--irish-white); padding:18px; border-radius:12px; box-shadow:var(--card-shadow)}
+
+/* Resume blocks */
+.card{background:var(--irish-white); padding:16px; margin-bottom:14px; border-radius:10px; box-shadow:0 8px 20px rgba(0,0,0,0.04)}
+.card h3{margin:0 0 8px 0}
+.meta{font-size:14px; color:var(--muted)}
+.skill-list{display:flex; gap:8px; flex-wrap:wrap}
+.skill{background:#f3f7f5;padding:6px 10px;border-radius:8px;font-size:13px; color:var(--text); transition:transform .18s}
+.skill:hover{transform:translateY(-4px)}
+
+/* Tables */
+.table{width:100%; border-collapse:collapse; margin-top:12px}
+.table th, .table td{padding:10px 12px; border-bottom:1px solid #eee; text-align:left}
+.table th{background:linear-gradient(90deg,var(--irish-green),var(--irish-orange)); color:var(--irish-white); font-weight:600}
+.table tr:hover td{background:rgba(22,155,98,0.03)}
+
+/* Footer */
+.footer{margin-top:28px; text-align:center; color:var(--muted); font-size:14px}
+
+/* subtle animated accents */
+.pulse{
+  display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--accent);
+  box-shadow:0 0 0 rgba(22,155,98,0.4); animation:pulse 2s infinite;
+}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(22,155,98,0.35)}70%{box-shadow:0 0 0 14px rgba(22,155,98,0)}100%{box-shadow:0 0 0 0 rgba(22,155,98,0)}}
+
+/* small utilities */
+.row{display:flex; gap:12px; align-items:center}
+.badge{padding:6px 10px; background:#f8f8f8; border-radius:8px; font-weight:600; font-size:13px}
+.note{font-size:14px; color:var(--muted)}
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=980" />
+  <title>Резюме — Марія Смаль</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="flag" aria-hidden="true"><div class="g"></div><div class="w"></div><div class="o"></div></div>
+        <div>
+          <div class="title">Марія Смаль — Резюме</div>
+          <div class="note">Стиль: модерн · Мова: українська</div>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Головне меню">
+        <a href="index.html" class="active">Резюме</a>
+        <a href="economy.html">Економічна безпека</a>
+        <a href="threats.html">Загрози & протидія</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <section class="left">
+        <div class="card">
+          <h3>Контактні дані</h3>
+          <p class="meta">Марія Смаль · Дата народження: 20/09/2007 · Адреса: Milyutenka, 6, Kyiv, Ukraine</p>
+          <p class="meta">Телефон: (+380) 958373596 · Email: smal.masha2007@gmail.com</p>
+        </div>
+
+        <div class="card">
+          <h3>Освіта</h3>
+          <ul>
+            <li>Complete general secondary education — Koryukiv Lyceum №3 (01/09/2014 – 30/06/2025)</li>
+            <li>Bachelor — State University of Trade and Economics</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Навички</h3>
+          <div class="skill-list">
+            <span class="skill">Teamwork</span>
+            <span class="skill">Communication</span>
+            <span class="skill">Microsoft Office</span>
+            <span class="skill">Онлайн-інструменти для співпраці</span>
+            <span class="skill">Аналітичне мислення</span>
+            <span class="skill">Креативне мислення</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Досвід та волонтерство</h3>
+          <p class="note">Участь у благодійних концертах і шкільних ярмарках. Співпраця з місцевою спільнотою Кoryukivka.</p>
+        </div>
+
+        <div class="card">
+          <h3>Хобі</h3>
+          <p class="note">Музика (вокал), мистецтво (живопис), спорт (атлетика, волейбол, ковзани)</p>
+        </div>
+
+        <div class="card">
+          <h3>Мови</h3>
+          <p>Рідна: українська · Інші: англійська, італійська</p>
+        </div>
+
+        <div class="card">
+          <h3>Коротко про мене</h3>
+          <p class="note">Відповідальна, комунікабельна, вмію працювати в команді і дотримуватись робочого графіка. Володію навичками організації та аналітики.</p>
+        </div>
+
+      </section>
+
+      <aside class="right">
+        <div class="card">
+          <h3>Швидкий профіль</h3>
+          <p><strong>Mariia Smal</strong></p>
+          <p class="meta">E-mail: smal.masha2007@gmail.com</p>
+          <p class="meta">Телефон: (+380) 958373596</p>
+        </div>
+
+        <div class="card">
+          <h3>Ключові навички</h3>
+          <div class="skill-list">
+            <span class="skill">Комунікація</span>
+            <span class="skill">Аналітика</span>
+            <span class="skill">MS Office</span>
+            <span class="skill">Онлайн-інструменти</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Волонтерство</h3>
+          <p class="note">Участь у благодійних заходах на підтримку ЗСУ.</p>
+        </div>
+
+        <div class="card">
+          <h3>Джерело</h3>
+          <p class="note">Інформація взята з наданого резюме. :contentReference[oaicite:2]{index=2}</p>
+        </div>
+
+      </aside>
+    </main>
+
+    <footer class="footer">
+      © Марія Смаль — Резюме · Створено для розміщення на GitHub
+    </footer>
+  </div>
+</body>
+</html>
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=980" />
+  <title>Економічна безпека — Ірландія</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="flag" aria-hidden="true"><div class="g"></div><div class="w"></div><div class="o"></div></div>
+        <div>
+          <div class="title">Економічна безпека — Ірландія</div>
+          <div class="note">Коротке резюме основних показників</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Резюме</a>
+        <a href="economy.html" class="active">Економічна безпека</a>
+        <a href="threats.html">Загрози & протидія</a>
+      </nav>
+    </header>
+
+    <main style="margin-top:22px">
+      <div class="card">
+        <h3>Короткий підсумок (5 речень)</h3>
+        <p class="note">
+          Ірландія демонструє змішану картину економічної безпеки: за демографічними показниками очікувана тривалість життя знаходиться на оптимальному рівні (~82,3 роки),
+          але демографічне навантаження зростає і оцінюється як небезпечне (≈52,8). Показник імпортної залежності енергетики дуже високий (середнє ≈75%), що створює серйозний ризик для енергобезпеки. У той же час частка відновлюваної енергетики зростає ( ≈10%), а використання інтернету й інвестиції прямого іноземного капіталу були високими — це сильні сторони інвестиційно-інноваційної безпеки. Продовольча безпека має проблеми: виробництво зерна на одну особу низьке (≈0,46 т/рік), що вказує на залежність від імпорту окремих продуктів. Фінансові резерви та соціальні індикатори мають неоднорідні ризики: низькі валові міжнародні резерви і висока нерівність доходів поряд із достатнім фінансуванням охорони здоров'я.
+        </p>
+
+        <h3>Ключові показники (вибране)</h3>
+        <table class="table">
+          <thead><tr><th>Показник</th><th>Оцінка / коментар</th></tr></thead>
+          <tbody>
+            <tr><td>Урожайність зернових (средн.)</td><td>Низька — виробнича безпека незадовільна</td></tr>
+            <tr><td>Очікувана тривалість життя</td><td>≈82,3 роки — оптимальний рівень</td></tr>
+            <tr><td>Демографічне навантаження</td><td>≈52,8 — небезпечна тенденція (зростання)</td></tr>
+            <tr><td>Імпортна залежність енергетики</td><td>≈75% — абсолютно небезпечно</td></tr>
+            <tr><td>Частка відновлюваних джерел</td><td>≈10% — позитивна тенденція</td></tr>
+            <tr><td>Рівень користування інтернетом</td><td>≈89% — оптимальний (інноваційний потенціал)</td></tr>
+            <tr><td>Виробництво зерна на душу</td><td>≈0,46 т — дуже низько, ризик продовольчої безпеки</td></tr>
+            <tr><td>Валові міжнародні резерви (місяців імпорту)</td><td>≈0,11 — критично низько</td></tr>
+            <tr><td>Індекс споживчих цін (середн.)</td><td>≈1.97% — задовільно</td></tr>
+            <tr><td>Рівень безробіття (середн.)</td><td>≈6,08% — незадовільно, але тенденція на зниження</td></tr>
+          </tbody>
+        </table>
+        <p class="note">Джерело даних: надані тобою табличні дані за період 2012–2024 (усього зведені показники та прогнози).</p>
+      </div>
+    </main>
+
+    <footer class="footer">© Економічна безпека — стислий звіт</footer>
+  </div>
+</body>
+</html>
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=980" />
+  <title>Загрози та протидія — Ірландія</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="flag" aria-hidden="true"><div class="g"></div><div class="w"></div><div class="o"></div></div>
+        <div>
+          <div class="title">Загрози та протидія — Ірландія</div>
+          <div class="note">Таблиці загроз і заходів</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Резюме</a>
+        <a href="economy.html">Економічна безпека</a>
+        <a href="threats.html" class="active">Загрози & протидія</a>
+      </nav>
+    </header>
+
+    <main style="margin-top:22px">
+      <div class="card">
+        <h3>5 основних загроз економічній безпеці</h3>
+        <table class="table">
+          <thead><tr><th>№</th><th>Загроза</th><th>Коротко</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Енергетична залежність</td><td>Висока імпортна залежність первинної енергії (~75%) — ризик постачання та ціни.</td></tr>
+            <tr><td>2</td><td>Продовольча вразливість</td><td>Низьке виробництво зерна на душу (≈0,46 т) — залежність від імпорту харчів.</td></tr>
+            <tr><td>3</td><td>Демографічне навантаження</td><td>Зростаюче навантаження (≈52,8) створює тиск на пенсії та соцпослуги.</td></tr>
+            <tr><td>4</td><td>Нерівність доходів</td><td>Високий децильний коефіцієнт (~7,2) — соціальна нестабільність і ризики бідності.</td></tr>
+            <tr><td>5</td><td>Низькі валютні резерви</td><td>Мало місяців імпорту у резерві (~0,11) — фінансова вразливість при шоках.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3>5 методів протидії (коротко)</h3>
+        <table class="table">
+          <thead><tr><th>№</th><th>Метод</th><th>Що робити</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Диверсифікація енергопостачання</td><td>Збільшувати ВДЕ, інвестувати в інфраструктуру зберігання і локальні джерела.</td></tr>
+            <tr><td>2</td><td>Підтримка агросектора</td><td>Стимулювати місцеве виробництво зерна через субсидії, інновації, навчання фермерів.</td></tr>
+            <tr><td>3</td><td>Політика соціальної інклюзії</td><td>Зниження нерівності: програми перенавчання, податкові стимули та підтримка бідних.</td></tr>
+            <tr><td>4</td><td>Зміцнення фінансових буферів</td><td>Формувати резерви, зберігати валютний запас та гнучку політику боргу.</td></tr>
+            <tr><td>5</td><td>Інновації та діджиталізація</td><td>Підтримувати НДДКР, розширювати інтернет-інфраструктуру, залучати інвестиції в R&amp;D.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+
+    <footer class="footer">© Загрози та протидія — короткий перелік</footer>
+  </div>
+</body>
+</html>
